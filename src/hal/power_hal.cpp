@@ -1,7 +1,10 @@
 #include "power_hal.h"
+#include "ble_uart_service.h"
+#include "../web/web_server.h"
 
 static uint32_t last_activity_ms = 0;
 static uint32_t sleep_timeout_ms = SLEEP_TIMEOUT_MS;
+static uint32_t deep_sleep_timeout_ms = DEEP_SLEEP_TIMEOUT;
 static bool screen_off = false;
 
 void power_hal_init(void) {

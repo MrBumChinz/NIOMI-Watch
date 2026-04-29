@@ -30,7 +30,7 @@
 
 // Sleep
 #define SLEEP_TIMEOUT_MS    10000
-#define DEEP_SLEEP_TIMEOUT  60000
+#define DEEP_SLEEP_TIMEOUT  30000
 
 // GPS
 #define GPS_BAUD            38400
