@@ -60,7 +60,7 @@ static char* cmd_status(void) {
 
 static char* cmd_version(void) {
     char *buf = (char*)malloc(192);
-    snprintf(buf, 192, "{\"version\":\"WDGWatch v0.1.0\",\"codename\":\"PipBoy-3000\",\"hw\":\"T-Watch Ultra ESP32-S3\",\"features\":[\"nfc\",\"lora\",\"gps\",\"recon\",\"compass\"]}");
+    snprintf(buf, 192, "{\"version\":\"WDGWatch v0.1.1\",\"codename\":\"PipBoy-3000\",\"hw\":\"T-Watch Ultra ESP32-S3\",\"features\":[\"nfc\",\"lora\",\"gps\",\"recon\",\"compass\"]}");
     return buf;
 }
 
