@@ -1,4 +1,4 @@
-# PipBoy Watch — BLE API Guide for WatchDogs Game
+# PipBoy Watch — BLE API Guide for NIOMI Game
 
 ## Quick Start
 

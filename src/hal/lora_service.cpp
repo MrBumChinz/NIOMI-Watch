@@ -18,7 +18,7 @@
 #define MC_FREQ         869.618f
 #define MC_BW           62.5f
 #define MC_SF           8
-#define MC_CR           5  // MeshCore default (matching WatchDogs + standard nodes)
+#define MC_CR           5  // MeshCore default (matching NIOMI + standard nodes)
 #define MC_SYNC_WORD    0x1424
 #define MC_PREAMBLE     16
 #define MC_PUBLIC_HASH  0x11
@@ -213,7 +213,7 @@ static void decode_packet(uint8_t *data, int len, float rssi, float snr) {
     int plen = len - offset;
     if (plen <= 0) return;
 
-    // Dedup: header + payload (skip path) - same as WatchDogs, 30s window
+    // Dedup: header + payload (skip path) - same as NIOMI, 30s window
     if (is_duplicate_hp(header, payload, plen)) return;
 
     Serial.printf("[MC] RX: %d bytes, type=%d, hops=%d, RSSI=%.0f\n", len, ptype, hops, rssi);

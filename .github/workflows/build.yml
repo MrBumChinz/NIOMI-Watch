@@ -42,15 +42,15 @@ jobs:
       - name: Rename artefacts
         run: |
           mkdir -p dist
-          cp .pio/build/twatch-ultra/firmware.bin      dist/wdgwatch-firmware-${{ github.ref_name }}.bin
-          cp .pio/build/twatch-ultra/firmware.elf      dist/wdgwatch-firmware-${{ github.ref_name }}.elf
-          cp .pio/build/twatch-ultra/bootloader.bin    dist/wdgwatch-bootloader-${{ github.ref_name }}.bin
-          cp .pio/build/twatch-ultra/partitions.bin    dist/wdgwatch-partitions-${{ github.ref_name }}.bin || true
+          cp .pio/build/twatch-ultra/firmware.bin      dist/niomi-watch-firmware-${{ github.ref_name }}.bin
+          cp .pio/build/twatch-ultra/firmware.elf      dist/niomi-watch-firmware-${{ github.ref_name }}.elf
+          cp .pio/build/twatch-ultra/bootloader.bin    dist/niomi-watch-bootloader-${{ github.ref_name }}.bin
+          cp .pio/build/twatch-ultra/partitions.bin    dist/niomi-watch-partitions-${{ github.ref_name }}.bin || true
 
       - name: Upload build artefacts
         uses: actions/upload-artifact@v4
         with:
-          name: wdgwatch-firmware-${{ github.ref_name }}
+          name: niomi-watch-firmware-${{ github.ref_name }}
           path: dist/
           retention-days: 30
 

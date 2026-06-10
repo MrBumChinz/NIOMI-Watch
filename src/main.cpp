@@ -36,7 +36,7 @@ static void update_watchface_data(void);
 void setup() {
     Serial.begin(115200);
     Serial.println("\n=================================");
-    Serial.println("  WDGWatch (PipBoy-3000) v0.1.1");
+    Serial.println("  NIOMI Watch (PipBoy-3000) v0.1.1");
     Serial.println("  T-Watch Ultra | ESP32-S3");
     Serial.println("=================================\n");
 

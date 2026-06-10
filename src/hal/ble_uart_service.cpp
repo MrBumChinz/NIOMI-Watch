@@ -225,7 +225,7 @@ void ble_uart_loop(void) {
         action_overlay_hide();
     }
 
-    // Update clock on WatchDogs overlay
+    // Update clock on NIOMI overlay
     if (ble_connected && action_overlay_is_active()) {
         static uint32_t last_clock = 0;
         if (millis() - last_clock > 1000) {
