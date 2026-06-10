@@ -1,18 +1,18 @@
-# WDGWatch (aka PipBoy-3000) — T-Watch Ultra Firmware
+# NIOMI Watch (aka PipBoy-3000) — T-Watch Ultra Firmware
 
 Custom firmware for **LilyGO T-Watch Ultra** (ESP32-S3, 410×502 AMOLED) turning
 it into a Pip-Boy-styled multi-role device and wearable companion for the
-**Watch Dogs Go** uConsole game.
+**NIOMI** uConsole game.
 
 - Standalone smartwatch (time, battery, GPS, compass, sensors)
 - Security research tool (WiFi recon, BLE scan with AirTag detection, NFC reader, LoRa MeshCore)
-- Wearable companion for the **Watch Dogs Go** uConsole game (BLE NUS link)
+- Wearable companion for the **NIOMI** uConsole game (BLE NUS link)
 - Remote-controllable from phone via built-in SoftAP + web UI on `192.168.4.1`
 
 Codename / SoftAP name stays **`PipBoy-3000`** (password `pip12345`). Project
-name **WDGWatch** — Watch Dogs Go Watch.
+name **NIOMI Watch**.
 
-Theme colour: `#00E5FF` cyan (matches [WatchDogsGo portal](https://locosp.github.io/WatchDogsGo/)).
+Theme colour: `#00E5FF` cyan (matches [soulcage.win](https://soulcage.win)).
 
 ---
 
@@ -38,7 +38,7 @@ Theme colour: `#00E5FF` cyan (matches [WatchDogsGo portal](https://locosp.github
 | LoRa MeshCore RX/TX on public channel | yes | yes | `lora_send`, `lora_advert` |
 | MeshCore advert signing (Orlp Ed25519) | auto | — | — |
 | Message history on SD (20 msgs) | yes | yes (HTTP `/api/lora/history`) | — |
-| WatchDogs Connect (skull overlay, dimmed) | yes | — | on connect |
+| NIOMI Connect (skull overlay, dimmed) | yes | — | on connect |
 | Unified JSON command API | — | `/api/cmd` | Nordic UART |
 
 ### Unstable / known limitations
@@ -74,8 +74,8 @@ Theme colour: `#00E5FF` cyan (matches [WatchDogsGo portal](https://locosp.github
 ## Build & flash
 
 ```bash
-git clone https://github.com/LOCOSP/WDGWatch.git
-cd WDGWatch
+git clone https://github.com/MrBumChinz/NIOMI-Watch.git
+cd NIOMI-Watch
 pio run --target upload          # builds + flashes via USB
 pio device monitor --baud 115200
 ```
@@ -149,11 +149,11 @@ watch against the freshly-calibrated phone.
 
 ---
 
-## Flow: pair with Watch Dogs Go game (uConsole, BLE)
+## Flow: pair with NIOMI game (uConsole, BLE)
 
 **First connection (PIN required):**
 
-1. On the watch, open **WiFi** app → tap **WATCH DOGS CONNECT** (BLE toggle).
+1. On the watch, open **WiFi** app → tap **NIOMI CONNECT** (BLE toggle).
 2. Watch advertises as `PipBoy-xxxxx` (unique 5-char suffix from MAC), prints
    `[BLE] Advertising` and `[BLE] PIN: 123456` on serial.
 3. In the game on uConsole, start pairing / scan.
@@ -163,7 +163,7 @@ watch against the freshly-calibrated phone.
    (6 digits, max brightness).
 6. User reads PIN, enters it on the uConsole.
 7. Bond is stored on both sides. Watch serial: `[BLE] Auth OK - encrypted`.
-8. Watch switches to **WATCH_DOGS** overlay (skull + "L I N K E D" + clock,
+8. Watch switches to **NIOMI** overlay (skull + "L I N K E D" + clock,
    brightness dimmed to 20).
 
 **Subsequent connections:**
@@ -267,7 +267,7 @@ src/web/web_server.cpp    - ESPAsyncWebServer + WebSocket on 80/ws
 src/web/web_ui.h          - PROGMEM HTML/CSS/JS for phone UI
 src/api/command_handler.cpp - unified JSON API (BLE + HTTP)
 src/apps/*.cpp            - per-feature LVGL screens
-src/ui/action_overlay.cpp - IN ACTION / WATCH_DOGS / PAIRING overlays
+src/ui/action_overlay.cpp - IN ACTION / NIOMI / PAIRING overlays
 ```
 
 ---

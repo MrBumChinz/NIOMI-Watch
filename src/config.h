@@ -10,7 +10,7 @@
 #define PIPBOY_MAX_BRIGHTNESS      255
 #define PIPBOY_DEFAULT_BRIGHTNESS  128
 
-// WatchDogsGo cyan color theme (#00E5FF)
+// NIOMI cyan color theme (#00E5FF)
 #define PIPBOY_GREEN        0x00E5FF
 #define PIPBOY_GREEN_DIM    0x007280
 #define PIPBOY_GREEN_DARK   0x003840

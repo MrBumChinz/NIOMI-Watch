@@ -36,7 +36,7 @@ void action_overlay_show(const char *action_name) {
     lv_obj_add_flag(overlay_scr, LV_OBJ_FLAG_CLICKABLE);
     lv_obj_clear_flag(overlay_scr, LV_OBJ_FLAG_SCROLLABLE);
 
-    bool is_watchdogs = (strcmp(action_name, "WATCH_DOGS") == 0);
+    bool is_watchdogs = (strcmp(action_name, "NIOMI") == 0);
     bool is_pairing   = (strcmp(action_name, "PAIRING") == 0);
 
     if (is_pairing) {
@@ -76,11 +76,11 @@ void action_overlay_show(const char *action_name) {
     }
 
     if (is_watchdogs) {
-        // ---- WATCH DOGS MODE: skull + title, minimal brightness ----
+        // ---- NIOMI MODE: skull + title, minimal brightness ----
 
         // Title
         lbl_action = lv_label_create(overlay_scr);
-        lv_label_set_text(lbl_action, "WATCH DOGS");
+        lv_label_set_text(lbl_action, "NIOMI");
         lv_obj_set_style_text_color(lbl_action, G, 0);
         lv_obj_set_style_text_font(lbl_action, &lv_font_montserrat_48, 0);
         lv_obj_set_style_text_letter_space(lbl_action, 3, 0);

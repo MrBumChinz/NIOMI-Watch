@@ -202,10 +202,10 @@ bool ble_uart_is_active(void) {
 void ble_uart_loop(void) {
     if (!ble_initialized) return;
 
-    // WatchDogs connected - show skull, dim screen
+    // NIOMI connected - show skull, dim screen
     if (ble_just_connected) {
         ble_just_connected = false;
-        action_overlay_show("WATCH_DOGS");
+        action_overlay_show("NIOMI");
         instance.setBrightness(15); // minimal brightness
     }
     if (ble_just_disconnected) {

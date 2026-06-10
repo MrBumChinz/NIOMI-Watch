@@ -101,7 +101,7 @@ void wifi_app_create(lv_obj_t *parent) {
     int bw = 340, bh = 65;
     make_btn(scr, x, y, bw, bh, LV_SYMBOL_WIFI " WEB SERVER ON / OFF", toggle_web_cb);
     y += bh + 10;
-    make_btn(scr, x, y, bw, 50, LV_SYMBOL_BLUETOOTH " Watch Dogs Connect", toggle_ble_cb);
+    make_btn(scr, x, y, bw, 50, LV_SYMBOL_BLUETOOTH " NIOMI Connect", toggle_ble_cb);
 
     y += 58;
     lbl_ble_status = lv_label_create(scr);
